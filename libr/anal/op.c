@@ -101,7 +101,7 @@ static RAnalVar *get_used_var(RAnal *anal, RAnalOp *op) {
 	return res;
 }
 
-static int defaultCycles(RAsmOp *op) {
+static int defaultCycles(RAnalOp *op) {
 	switch (op->type) {
 	case R_ANAL_OP_TYPE_PUSH:
 	case R_ANAL_OP_TYPE_POP:
@@ -120,7 +120,6 @@ static int defaultCycles(RAsmOp *op) {
 	case R_ANAL_OP_TYPE_RET:
 	case R_ANAL_OP_TYPE_JMP:
 	case R_ANAL_OP_TYPE_RJMP:
-	case R_ANAL_OP_TYPE_CALL:
 	case R_ANAL_OP_TYPE_CALL:
 		return 4;
 	default:
